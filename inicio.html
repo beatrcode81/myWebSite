@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="particulas"></div>
+
+  <nav class="navegacao">
+    <ul class="menu">
+      <li><a href="#inicio" class="menu-link">Início</a></li>
+      <li><a href="aboutme.html" class="menu-link">Sobre mim</a></li>
+      <li><a href="#projetos" class="menu-link">Projetos</a></li>
+      <li><a href="#contatos" class="menu-link">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="cabecalho" id="inicio">
+      <img class="foto-perfil" src="#" alt="Foto de Beatriz Oliveira">
+      <h1>Beatriz Oliveira</h1>
+      <p class="cabecalho-sub-titulo">Desenvolvedora Front-End | UX/UI Designer</p>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          "Entre pixels e linhas de código, desenvolvo soluções digitais que unem criatividade e precisão."
+        </p>
+      </div>
+    </section>
+
+    <section class="projetos" id="projetos">
+      <h2 class="projetos-titulo">Galeria de Projetos</h2>
+
+      <div class="projetos-caixa">
+
+        <div class="projetos-card">
+          <img src="Fretabus.png" alt="Projeto 1" class="projetos-imagem">
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Fretabus</h3>
+            <p class="paragrafo-projetos">Site fictício para fretamento de estudantes universitário.</p>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <img src="Bella Expresso.png" alt="Projeto 2" class="projetos-imagem">
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Cafeteria Bella Expresso</h3>
+            <p class="paragrafo-projetos">Projeto fictício de estudo para curso técnico de administração.</p>
+          </div>
+        </div>
+
+        <div class="projetos-card">
+          <img src="Cálculo do trabalhador.png" alt="Projeto 3" class="projetos-imagem">
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Cálculo do trabalhador</h3>
+            <p class="paragrafo-projetos">Calculadora para aprender mais sobre seus direitos e deveres trabalhistas.</p>
+          </div>
+        </div>
+
+        <span><a href="">Ver mais ↓</a></span>
+
+      </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Contato</h2>
+
+      <form id="formulario" class="formulario-contato">
+        <div class="grupo-form">
+          <input type="text" id="nome" class="campo-form" placeholder="Nome" required>
+        </div>
+
+        <div class="grupo-form">
+          <textarea id="mensagem" class="campo-form" placeholder="Digite sua mensagem..." required></textarea>
+        </div>
+
+        <button type="submit" class="botao-form">Enviar WhatsApp</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; Todos os direitos reservados Beatriz Oliveira 2026.</p>
+  </footer>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const mensagem = document.getElementById("mensagem").value;
+      const telefone = "5513997462927";
+
+      const texto = `Olá, me chamo ${nome}. ${mensagem}`;
+      const msgFormatada = encodeURIComponent(texto);
+
+      const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+      window.open(url, "_blank");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255,255,255,0.08);
+}
+
+body {
+  background-color: var(--escuro);
+  color: var(--claro);
+}
+
+/* NAV */
+
+.navegacao {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(15,23,42,0.8);
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--claro);
+  position: relative;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg,var(--primaria),var(--secundaria));
+  transition: 0.4s;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.foto-perfil {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid var(--vidro);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 5rem;
+  color: var(--primaria);
+}
+
+.frase-gancho {
+  margin-top: 10px;
+  color: var(--secundaria);
+}
+
+/* SEÇÕES */
+
+section {
+  padding: 5rem 2rem;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+p {
+    text-align: center;
+
+}
+
+.cabecalho-sub-titulo {
+  font-size: 1.3rem;
+}
+
+/* CARD GRANDE (igual projetos) */
+
+.card-grande {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid var(--vidro);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card-grande:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(124,58,237,0.3);
+}
+
+/* TECNOLOGIAS */
+
+.tecnologias-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tecnologias-grid img {
+  width: 100px;
+  transition: 0.3s;
+}
+
+.tecnologias-grid img:hover {
+  transform: scale(1.2);
+}
+
+/* SKILLS */
+
+.lista-skills {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.lista-skills li {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--vidro);
+}
+
+/* FOOTER */
+
+.rodape {
+  text-align: center;
+  padding: 2rem;
+  background: var(--maisEscuro);
+}
+
+/* FUNDO */
+
+.particulas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+    var(--maisEscuro);
+}
